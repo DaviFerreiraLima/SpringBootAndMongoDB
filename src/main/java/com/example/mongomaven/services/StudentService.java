@@ -26,7 +26,6 @@ public class StudentService {
     }
 
     public String deleteStudent( String id){
-
          studentRepository.deleteById(id);
          return "The student has benn deleted from the system";
     }
@@ -34,4 +33,9 @@ public class StudentService {
     public List<Student> getStudentByName(String name){
         return studentRepository.findByName(name);
     }
+
+    public List<Student> studentsByNameAndMail(String name, String email){
+        return  studentRepository.findByNameAndEmail(name,email);
+    }
 }
+
