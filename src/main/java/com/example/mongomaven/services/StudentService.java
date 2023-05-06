@@ -34,7 +34,7 @@ public class StudentService {
         return studentRepository.findByName(name);
     }
 
-    public List<Student> studentsByNameAndMail(String name, String email){
+    public Student studentsByNameAndMail(String name, String email){
         return  studentRepository.findByNameAndEmail(name,email);
     }
 }
