@@ -50,9 +50,9 @@ public class StudentController {
             return studentService.getStudentByNameAndMail(name,email);
         }
 
-        @GetMapping("/studentByNameOrMail")
-        public Student studentByNameOrderByEmail(String name, String email){
-            return  studentService.getStudentByNameOrderByEmail(name,email);
+        @GetMapping("/studentsByNameOrMail")
+        public List<Student> studentsByNameOrderByEmail(String name, String email){
+            return  studentService.getStudentsByNameOrderByEmail(name,email);
         }
 
 
