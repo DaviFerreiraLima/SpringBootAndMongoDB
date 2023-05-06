@@ -38,7 +38,7 @@ public class StudentService {
         return  studentRepository.findByNameAndEmail(name,email);
     }
     public List<Student> getStudentsByNameOrderByEmail(String name, String email){
-        return  studentRepository.findByNameOrderByEmail(name,email);
+        return  studentRepository.findByNameOrEmail(name,email);
     }
 }
 
