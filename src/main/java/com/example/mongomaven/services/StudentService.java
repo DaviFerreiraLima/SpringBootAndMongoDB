@@ -34,8 +34,11 @@ public class StudentService {
         return studentRepository.findByName(name);
     }
 
-    public Student studentsByNameAndMail(String name, String email){
+    public Student getStudentByNameAndMail(String name, String email){
         return  studentRepository.findByNameAndEmail(name,email);
+    }
+    public Student getStudentByNameOrderByEmail(String name, String email){
+        return  studentRepository.findByNameOrderByEmail(name,email);
     }
 }
 
