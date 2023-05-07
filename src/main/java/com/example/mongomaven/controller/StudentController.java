@@ -1,4 +1,4 @@
-package com.example.mongomaven.Controller;
+package com.example.mongomaven.controller;
 
 import com.example.mongomaven.entities.Student;
 import com.example.mongomaven.services.StudentService;
@@ -54,6 +54,16 @@ public class StudentController {
         public List<Student> studentsByNameOrderByEmail(String name, String email){
             return  studentService.getStudentsByNameOrderByEmail(name,email);
         }
+
+        @GetMapping("/allWithPagination")
+        public List<Student> getAllWithPagination(@RequestParam int pageNumber,@RequestParam int pageSize){
+            return studentService.getAllWithPagination(pageNumber,pageSize);
+        }
+
+    @GetMapping("/allWithSorting")
+    public List<Student> AllWithSorting(){
+        return studentService.AllWithSorting();
+    }
 
 
 }
