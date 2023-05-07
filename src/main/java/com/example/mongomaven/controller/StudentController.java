@@ -65,5 +65,25 @@ public class StudentController {
         return studentService.AllWithSorting();
     }
 
+    /*@GetMapping("/byDepartamentName")
+    public List<Student> ByDepartamentName(@RequestParam String departName){
+        return studentService.getByDepartamentName(departName);
+    }*/
+
+    @GetMapping("/byEmail")
+    public List<Student> ByEmail(@RequestParam String email){
+        return studentService.getByEmail(email);
+    }
+
+    @GetMapping("/nameStartsWith")
+
+    public List<Student> getNameStartsWith(@RequestParam String name){
+        return studentService.getNameStartsWith(name);
+    }
+    @GetMapping("/byDepartmentId")
+    public List<Student> getByDepartmentId(@RequestParam String id){
+        return studentService.getDepartmentById(id);
+    }
+
 
 }

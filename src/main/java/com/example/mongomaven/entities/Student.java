@@ -3,6 +3,7 @@ package com.example.mongomaven.entities;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.annotation.PersistenceCreator;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -18,10 +19,10 @@ import java.util.List;
         @Field(name = "mail")
         private String email;
 
-
-    private Department department;
-
-        private List<Subject> subjects;
+        @DBRef
+        private Department department;
+    @DBRef
+    private List<Subject> subjects;
 
         public String getId() {
             return id;
